@@ -1,0 +1,51 @@
+{
+  "name": "agente-ia-whatsapp-qualificacao-lead",
+  "description": "Fluxo generico para agente de IA no WhatsApp qualificar leads e encaminhar proximo passo.",
+  "version": "0.1.0",
+  "brand": "XMACNA",
+  "positioning": "Funcionarios Digitais com IA",
+  "steps": [
+    {
+      "id": "greeting",
+      "goal": "iniciar conversa e entender contexto",
+      "example": "Oi. Posso te ajudar a entender onde a IA pode gerar retorno primeiro na sua operacao?"
+    },
+    {
+      "id": "pain_discovery",
+      "goal": "identificar dor principal",
+      "question": "Qual processo hoje mais perde lead, tempo ou dinheiro?"
+    },
+    {
+      "id": "volume",
+      "goal": "medir escala do problema",
+      "question": "Em media, quantos leads ou atendimentos voces recebem por mes?"
+    },
+    {
+      "id": "impact",
+      "goal": "entender impacto financeiro",
+      "question": "O que acontece quando o time demora para responder ou esquece follow-up?"
+    },
+    {
+      "id": "systems",
+      "goal": "mapear dados e integracao",
+      "question": "Voces usam CRM, planilha ou algum sistema para registrar oportunidades?"
+    },
+    {
+      "id": "next_step",
+      "goal": "definir encaminhamento",
+      "rule": "Se houver dor clara e urgencia media ou alta, recomendar diagnostico. Se houver risco sensivel, transferir para humano."
+    }
+  ],
+  "handoff_rules": [
+    "lead pede preco fechado sem diagnostico",
+    "lead relata tema juridico ou financeiro sensivel",
+    "lead pede contrato ou proposta formal",
+    "lead demonstra alta urgencia e fit comercial"
+  ],
+  "canonical_links": {
+    "diagnostico": "https://xmacna.ai/diagnostico",
+    "sdr_com_ia": "https://xmacna.ai/sdr-com-ia",
+    "funcionario_digital": "https://xmacna.ai/funcionario-digital"
+  }
+}
+
