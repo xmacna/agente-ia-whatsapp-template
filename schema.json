@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xmacna.ai/schemas/whatsapp-ai-lead-qualification.schema.json",
+  "title": "WhatsApp AI Lead Qualification",
+  "description": "Contrato de saida para agente de IA no WhatsApp que qualifica leads comerciais.",
+  "type": "object",
+  "required": ["lead", "qualification", "next_step"],
+  "properties": {
+    "lead": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "company": { "type": "string" },
+        "segment": { "type": "string" },
+        "contact_channel": { "type": "string", "const": "whatsapp" }
+      }
+    },
+    "qualification": {
+      "type": "object",
+      "properties": {
+        "primary_pain": { "type": "string" },
+        "monthly_volume": { "type": "integer", "minimum": 0 },
+        "urgency": { "type": "string", "enum": ["low", "medium", "high"] },
+        "fit_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "roi_signal": { "type": "string", "enum": ["weak", "moderate", "strong"] }
+      }
+    },
+    "next_step": {
+      "type": "object",
+      "properties": {
+        "recommended_action": {
+          "type": "string",
+          "enum": ["diagnostico", "sales_meeting", "human_handoff", "nurture"]
+        },
+        "summary": { "type": "string" },
+        "missing_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+
